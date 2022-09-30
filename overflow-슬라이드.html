@@ -70,7 +70,17 @@
         // alert("인라인 스타일 정보" + v_chd1.style.left);
 
         function f_move() {
+            console.log(parseInt(v_chd1.style.left) - v_mvWidth);
             v_chd1.style.left = parseInt(v_chd1.style.left) - v_mvWidth + "px";
+            v_chd2.style.left = parseInt(v_chd2.style.left) - v_mvWidth + "px";
+
+            //프레임 반복하기 
+            if(parseInt(v_chd1.style.left) == -400) {
+                v_chd1.style.left = "400px";
+            }
+            if(parseInt(v_chd2.style.left) == -400)  v_chd2.style.left = "400px";
+            
+
             setTimeout(f_move, 10);//재귀 호출
         }
         f_move();
