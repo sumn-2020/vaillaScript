@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .panel td img {
+            width: 100px;
+            height: 100px;
+        }
+
+        #wrapper {
+            width: 220px;
+            border: 2px solid red;
+            position: relative;
+            padding-top: 30px;
+        }
+
+        #wrapper .btn {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        .panel {
+            position: absolute;
+        }
+    </style>
+
+    <script>
+
+        var v_panel1; //전역변수로 변경하여 사용
+        var v_text;
+
+        window.onload = function () {
+            v_panel1 = document.querySelectorAll(".panel"); //var v_panel1은 function 안쪽에서만 살아있을수있음 => 지역변수
+            //var v_panel2 = document.getElementsByClassName("panel");
+            //console.log(v_panel1.length + " | " + v_panel2.length);
+
+            v_text = document.querySelector("#id_text");
+            v_text.value = 1 + "/" + v_panel1.length;
+
+        }
+
+        var v_layerIndex = 0;
+        function f_next() {
+            //alert("sd");
+
+            //판넬 z-index 초기화 필요
+            for (let i = 0; i < v_panel1.length; i++) {
+                v_panel1[i].style.zIndex = 1;
+            }
+
+            v_layerIndex++;  // 1 = 2번째  레이어(wok파일)가 보이도록
+            //마지막 레이어에 도달했을 때 처음 레이어로 다시 되돌리기
+            if (v_layerIndex == v_panel1.length) {
+                v_layerIndex = 0;
+            }
+            v_panel1[v_layerIndex].style.zIndex = 999;
+            v_text.value = (v_layerIndex + 1) + "/" + v_panel1.length;
+        }
+
+        function f_prev() {
+            
+            for (let i = 0; i < v_panel1.length; i++) {
+                v_panel1[i].style.zIndex = 1;
+            }
+
+            v_layerIndex--;  // 1 = 2번째  레이어(wok파일)가 보이도록
+            //마지막 레이어에 도달했을 때 처음 레이어로 다시 되돌리기
+            if (v_layerIndex == -1) {
+                v_layerIndex = v_panel1.length - 1;
+            }
+            v_panel1[v_layerIndex].style.zIndex = 999;
+            v_text.value = (v_layerIndex + 1) + "/" + v_panel1.length;
+
+        }
+
+
+    </script>
+</head>
+
+<body>
+
+
+
+    <div id="wrapper">
+        <!-- btn -->
+        <div class="btn">
+            <input type="button" value="&lt;" onclick="f_prev();">
+            <input id="id_text" value="" size="1">
+            <input type="button" value="&gt;" onclick="f_next();">
+        </div>
+        <!-- //btn -->
+
+
+        <!--panel  -->
+        <div class="panel">
+            <table border="1">
+                <caption></caption>
+                <tbody>
+                    <tr>
+                        <td><img src="../testImg/img.png" alt=""></td>
+                        <td><img src="../testImg/img.png" alt=""></td>
+                    </tr>
+                    <tr>
+                        <td><img src="image02.jpg" alt=""></td>
+                        <td><img src="image02.jpg" alt=""></td>
+                    </tr>
+                    <tr>
+                        <td><img src="image04.jpg" alt=""></td>
+                        <td><img src="image04.jpg" alt=""></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- //panel  -->
+        <!--panel  -->
+        <div class="panel" style="z-index: 999;">
+            <table border="1">
+                <caption></caption>
+                <tbody>
+                    <tr>
+                        <td><img src="image02.jpg" alt=""></td>
+                        <td><img src="image02.jpg" alt=""></td>
+                    </tr>
+                    <tr>
+                        <td><img src="../testImg/img.png" alt=""></td>
+                        <td><img src="../testImg/img.png" alt=""></td>
+                    </tr>
+                    <tr>
+                        <td><img src="image04.jpg" alt=""></td>
+                        <td><img src="image04.jpg" alt=""></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- //panel  -->
+        <!--panel  -->
+        <div class="panel">
+            <table border="1">
+                <caption></caption>
+                <tbody>
+
+                    <tr>
+                        <td><img src="image02.jpg" alt=""></td>
+                        <td><img src="image02.jpg" alt=""></td>
+                    </tr>
+                    <tr>
+                        <td><img src="image04.jpg" alt=""></td>
+                        <td><img src="image04.jpg" alt=""></td>
+                    </tr>
+                    <tr>
+                        <td><img src="../testImg/img.png" alt=""></td>
+                        <td><img src="../testImg/img.png" alt=""></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- //panel  -->
+    </div>
+
+
+
+</body>
+
+</html>
