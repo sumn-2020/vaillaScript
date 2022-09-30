@@ -1,0 +1,14 @@
+
+
+
+
+/* video-list */
+.video-list > li {width: 318px;margin-bottom: 30px;float: left;}
+.video-list > li:not(:nth-child(5n)) {margin-right: 15px;}
+.video-list .video-cont {padding: 15px 11px;}
+.video-list .profile-img {position: relative; width: 35px; height: 35px; border-radius: 100%; overflow: hidden; float: left;}
+.video-list .profile-img img{ position: absolute;top: 50%; left: 50%;transform: translate(-50%, -50%);height: 100%;}
+.video-list .txt-wrap {display: inline-block; padding-left: 17px;}
+.video-list .txt-wrap .tit{ display: block;font-weight: 300;margin-bottom: 8px;}
+.video-list .txt-wrap span {color: #606060; font-size: 12px;}
+.video-list .txt-wrap .info {display: block; padding-top: 5px;}
