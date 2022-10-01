@@ -16,7 +16,7 @@ a:link,
 a:visited{color:#303030;}
 a:hover,
 a:focus,
-a:active{color: #4e3f99; text-decoration: underline;}
+a:active{color: #4e3f99; }
 a img {border: none;}
 * {margin: 0;padding: 0;box-sizing: border-box;}
 

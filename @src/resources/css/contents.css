@@ -3,7 +3,9 @@
 
 
 /* video-list */
-.video-list > li {width: 318px;margin-bottom: 30px;float: left;}
+.video-list { padding: 15px ; padding-top: 78px;}
+.video-list:after {content: ""; display: block; clear: both;}
+.video-list > li {width: calc((100% - 60px) / 5);margin-bottom: 30px;float: left;}
 .video-list > li:not(:nth-child(5n)) {margin-right: 15px;}
 .video-list .video-cont {padding: 15px 11px;}
 .video-list .profile-img {position: relative; width: 35px; height: 35px; border-radius: 100%; overflow: hidden; float: left;}
