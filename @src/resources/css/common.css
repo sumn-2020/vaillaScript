@@ -1,7 +1,5 @@
 @charset "utf-8";
 
-
-
 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td { color:#000; padding:0; margin:0;  font-family:"ntk", 'open_sans', "돋움", dotum, sans-serif; word-break: break-word; -webkit-text-size-adjust:none; line-height: 1;}
 
 ol, ul, li { list-style:none; }
@@ -18,12 +16,11 @@ a:hover,
 a:focus,
 a:active{color: #4e3f99; }
 a img {border: none;}
-* {margin: 0;padding: 0;box-sizing: border-box;}
+* {margin: 0;padding: 0;box-sizing: border-box; outline: none;}
 
 /* 드래그시 배경컬러 */
 ::-moz-selection {background:#31aae4; color:#fff;}
 ::selection {background:#31aae4; color:#fff;}
-
 
 /* selector */
 /**,*:after,*:before{transition:all .3s ease;-webkit-transition:all .3s ease;-moz-transition:all .3s ease;-ms-transition:all .3s ease;-o-transition:all .3s ease;box-sizing:border-box;text-rendering:optimizelegibility}
@@ -31,17 +28,13 @@ a img {border: none;}
 ::selection{background:#31aae4;color:#fff}
 ::-moz-selection{background:#31aae4;color:#fff}*/
 
-
 /* accessibility */
 #accessibility{position:absolute; left:0; top:0; width:100%; z-index:9999;}
 #accessibility li{position:absolute; left:0; top:0; width:100%; z-index:9999;}
 #accessibility a{overflow:hidden; display:block; width:1px; height:1px; margin-bottom:-1px; color:#444; font-size:0; text-decoration:none;}
 #accessibility a:active, #accessibility a:focus{width:100%; height:auto; padding:5px 0; background:#eee; font-size:0.875rem; text-align:center;}
-
-
-button:focus, a:focus { outline: 0; box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);}
+/* button:focus, a:focus { outline: 0; box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);} */
 .hide {position: absolute; width: 1px;height: 1px; padding: 0; margin: -1px; overflow: hidden;  clip: rect(0,0,0,0); border: 0;}
 
-
 button, a {display: inline-block;}
-button {border: 0;}
+button {border: 0; cursor: pointer;}

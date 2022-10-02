@@ -1,14 +1,9 @@
 @charset "utf-8";
 
 
-html, body, #wrapper {height: 100%;}
-
 /* fixed */
 .header, .cont-wrap .tab, 
 .cont-wrap .lnb-wrap {position: fixed;}
-
-
-
 
 /* header */
 .header { padding: 10px 0;  background: #fff; width: 100%;}
@@ -31,13 +26,17 @@ html, body, #wrapper {height: 100%;}
 .cont-wrap .lnb-wrap{width: 240px; height: 100%;padding: 15px 15px 15px 0;  background: #fff;   } 
 .cont-wrap .lnb-wrap .menu {border-bottom: 1px solid #ddd;}
 .cont-wrap .lnb-wrap .menu a {padding: 12px 0 12px 58px;display: block;font-size: 14px; position: relative;}  
-.cont-wrap .lnb-wrap .menu a:after {content: "";display: block; background: url(../images/icons.png) no-repeat; width: 18px; height: 25px; position: absolute;     left: 22px; top: 7px;}
-.cont-wrap .lnb-wrap .menu li:nth-child(2n) a:after {background-position: 0 -37px;}
-.cont-wrap .lnb-wrap .menu li:nth-child(3n) a:after {background-position: 0 -73px;}
-.cont-wrap .lnb-wrap .menu li:nth-child(4n) a:after {background-position: 0 -109px;}
+.cont-wrap .lnb-wrap .menu .ico {display: inline-block; background: url(../images/icons.png) no-repeat; width: 18px; height: 25px; position: absolute;     left: 22px; top: 7px;}
+.cont-wrap .lnb-wrap .menu li .ico.ico02 {background-position: 0 -37px;}
+.cont-wrap .lnb-wrap .menu li .ico.ico03 {background-position: 0 -73px;}
+.cont-wrap .lnb-wrap .menu li .ico.ico04 {background-position: 0 -109px;}
 .cont-wrap .lnb-wrap .menu li.active a{background: #e5e5e5;}
 .cont-wrap .lnb-wrap .menu li a:hover {background: rgba(229, 229, 229, 0.42);}
-.cont-wrap .video-wrap {width: calc(100% - 240px);height: 100%;  background: #f9f9f9; margin-left: 240px;}
+.cont-wrap .lnb-wrap.on {padding: 0;}
+.cont-wrap .lnb-wrap.on .menu a { padding: 13px 0;padding-top: 37px; text-align: center;}
+.cont-wrap .lnb-wrap.on .menu .ico {    margin-left: -10px; left: 50%;}
+.cont-wrap .video-wrap {width: calc(100% - 240px);height: 100%;  background: #f9f9f9; margin-left: auto;}
+
 
 .cont-wrap .tab {width: 100%; padding: 15px;background: #fff; text-align: center;border-top: 1px solid #d3d3d3; border-bottom: 1px solid #d3d3d3;}
 .cont-wrap .tab li {display: inline-block;margin-left: 7px;}

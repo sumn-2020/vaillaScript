@@ -13,6 +13,59 @@
     <link rel="stylesheet" type="text/css" href="resources/css/cmpt.css">
     <link rel="stylesheet" type="text/css" href="resources/css/contents.css">
 
+    <script>
+        window.onload = function () {
+
+            const hamburder = document.querySelector(".btn-lnb");
+            const lnb = document.querySelector(".cont-wrap .lnb-wrap");
+            const content = document.querySelector(".video-wrap");
+            const videoItem = document.querySelectorAll("li");
+
+
+            //사이드메뉴
+            function f_hamburder() {
+                const hasClass = lnb.classList.contains("on");
+                lnb.classList.toggle("on");
+
+                if (!hasClass) {
+                    lnb.style.width = "72px";
+                    content.style.width = "calc(100% - 72px)";
+                } else {
+                    lnb.style.width = "240px";
+                    content.style.width = "calc(100% - 240px)";
+                }
+            }
+
+            //비디오 hover
+            function f_video() {
+
+                alert("sdf");
+                setTimeout(function () {
+                    videoItem.contains.add(".on");
+                }, 10);
+            }
+
+
+            function init() {
+                hamburder.addEventListener("click", f_hamburder);
+                videoItem.addEventListener("click", f_video);
+
+            }
+            init();
+
+
+
+
+
+
+
+
+
+
+
+        };
+    </script>
+</head>
 
 <body>
 
@@ -22,7 +75,7 @@
 
         <!-- header -->
         <header class="header">
-            <h1 class="logo"><img src="resources/images/logo.png" alt="YouTube kr"></h1>
+            <h1 class="logo"><a href="index.html"><img src="resources/images/logo.png" alt="YouTube kr"></a></h1>
             <!-- search-wrap -->
             <div class="search-wrap">
                 <div class="input-group">
@@ -49,10 +102,10 @@
                     <span class="hide">메뉴</span>
                 </a>
                 <ul class="menu">
-                    <li class="active"><a href="javascript:void(0);">홈</a></li>
-                    <li><a href="javascript:void(0);">탐색</a></li>
-                    <li><a href="javascript:void(0);">Shorts</a></li>
-                    <li><a href="javascript:void(0);">구독</a></li>
+                    <li class="active"><a href="javascript:void(0);"><i class="ico ico01"></i><span>홈</span></a></li>
+                    <li><a href="javascript:void(0);"><i class="ico ico02"></i><span>탐색</span></a></li>
+                    <li><a href="javascript:void(0);"><i class="ico ico03"></i><span>Shorts</span></a></li>
+                    <li><a href="javascript:void(0);"><i class="ico ico04"></i><span>구독</span></a></li>
                 </ul>
             </nav>
             <!-- // lnb-wrap  -->
