@@ -3,14 +3,29 @@
 /* video-list */
 .video-list {padding: 61px; padding-top: 89px;}
 .video-list:after {content: ""; display: block; clear: both;}
-.video-list > li {width: calc((100% - 60px) / 5);margin-bottom: 30px;float: left;background: #fff;}
+.video-list > li {width: calc((100% - 60px) / 5);margin-bottom: 30px;float: left;}
+.video-list > li a {display: block;}
 .video-list > li img {width: 100%;}
-.video-list > li.active:hover {transform: scale(1.2);box-shadow: 5px 3px 4px #0003;position: relative;z-index: 9;  transition-delay: 2s;transition: all 0.3s ease;}
+.video-list > li.active:hover {transform: scale(1.2);box-shadow: 5px 3px 4px #0003;background: #fff;position: relative;z-index: 9;  transition-delay: 2s;transition: all 0.3s ease;}
 .video-list > li:not(:nth-child(5n)) {margin-right: 15px;}
 .video-list .video-cont {padding: 15px 11px;}
 .video-list .profile-img {position: relative; width: 35px; height: 35px; border-radius: 100%; overflow: hidden; float: left;}
 .video-list .profile-img img{ position: absolute;top: 50%; left: 50%;transform: translate(-50%, -50%);height: 100%;}
-.video-list .txt-wrap {display: inline-block; padding-left: 17px;}
-.video-list .txt-wrap .tit{ display: block;font-weight: 300;margin-bottom: 8px;}
+.video-list .txt-wrap {width: calc(100% - 35px); display: inline-block; padding-left: 17px;}
+.video-list .txt-wrap .tit{ display: block;font-weight: 300;margin-bottom: 8px;    text-overflow: ellipsis; overflow: hidden; white-space: nowrap; width: 100%;}
 .video-list .txt-wrap span {color: #606060; font-size: 12px;}
 .video-list .txt-wrap .info {display: block; padding-top: 5px;}
+
+@media(max-width: 1500px) {
+    .video-list {    padding: 115px 35px;}
+    .video-list > li {width: calc((100% - 30px) / 3); margin-right: 15px;}
+    .video-list > li:nth-child(3n) {  margin-right: 0; }
+}
+@media(max-width: 1200px) {
+    .video-list > li {width:calc((100% - 15px) / 2);}
+    .video-list > li:nth-child(3n) {  margin-right: 15px; }
+    .video-list > li:nth-child(2n) {  margin-right: 0; }
+}
+@media(max-width: 780px) { 
+    .video-list > li {  width: 100%;}
+}

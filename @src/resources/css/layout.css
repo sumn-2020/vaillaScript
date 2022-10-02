@@ -3,7 +3,7 @@
 
 /* fixed */
 .header, .cont-wrap .tab, 
-.cont-wrap .lnb-wrap {position: fixed;}
+.cont-wrap .lnb-wrap {position: fixed; z-index: 9;}
 
 /* header */
 .header { padding: 10px 0;  background: #fff; width: 100%;}
