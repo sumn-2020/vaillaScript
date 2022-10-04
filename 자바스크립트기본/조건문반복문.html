@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        //조건문 반복문의 문법은 자바와 거의 같다
+        // => 자바와 자바스크립트 모두 c언어로부터 출발되었기때문에
+
+        //문자열은 ""(공백)만 false로 형변환되고 나머지는 true로..
+        //숫자는 0만 false로 형변환되고 나머지는 true..
+        // true로 사용하면 4자코딩, !0으로 쓰면 2자로 2자를 절약
+
+
+        if(!0) {
+            alert("참이야");
+        }else {
+            alert("거짓이야");
+        }
+
+
+        //객체순회 - for in
+        for(var x in document) {
+            console.log(document[x]);
+        }
+
+        //break, continue
+        var msg = "";
+        for (let i = 0; i < 10; i++) {
+            if(i == 3) {
+                //break; //밖으로 나가서 처음 만나는 조건문을 빠져나감
+                continue;  //해당되는 항목을 더이상 실행하지 않고 스킵
+            }
+            msg += i + "<br>";
+        }
+        document.write(msg);
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div {
+            border: 1px solid blue;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <h3>숫자 2개와 연산자 1개를 입력하고 결과 출력</h3>
+    <input type="button" value="계산" onclick="calc();"><br>
+     결과값: 
+     <input type="button" id="id_disp">
+     <input type="text" id="id_disp1">
+
+
+    <script>
+        function calc() {
+
+            var a = parseInt(prompt("첫번째 정수 입력"));
+            var b = parseInt(prompt("두번째 정수 입력"));
+            var c = prompt("연산자 입력", "+,-,*,/ 중 하나");
+            var sum = 0;
+
+            switch (c) {
+                case '+':
+                    sum = a + b;
+                    break;
+                case '-':
+                    sum = a - b;
+                    break;
+                case '*':
+                    sum = a * b;
+                    break;
+                case '/':
+                    sum = a / b;
+                    break;
+                default:
+                    alert("이거말고");
+                    return calc();
+
+            }
+
+            console.log(sum);
+            //document.write(sum);
+            //document.querySelector('#id_disp').innerHTML = sum;
+            // document.getElementById('id_disp').innerHTML = sum;
+            //document.querySelector('div').innerHTML = sum;
+            //document.getElementsByTagName('div')[2].innerHTML = sum;
+
+            //document.querySelector('#id_disp').value = sum;
+            document.querySelector('input[type="text"]').value = sum;
+
+
+
+        }
+    </script>
+</body>
+
+</html>

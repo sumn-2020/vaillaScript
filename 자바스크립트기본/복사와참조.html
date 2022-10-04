@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        //복사(call by value)
+        var v_roze = "로제";
+        var v_jeni = v_roze;
+        v_jeni = "제니";
+
+        console.log(v_jeni);
+
+
+        //참조(call by reference) - 객체는 참조방식으로 동작
+        var v_arr = ["로제", "제니", "리사", "지수"];
+        var v_arr2 = v_arr;
+        v_arr2[2] = "리리";
+
+        console.log(v_arr[2]);
+
+
+    </script>
+
+</body>
+
+</html>
