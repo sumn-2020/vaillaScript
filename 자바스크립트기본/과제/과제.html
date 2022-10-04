@@ -10,7 +10,7 @@
 
 <body>
 
- 
+
     <script>
         //1. 1부터 10까지의 합을 구하는 프로그램을 작성하시오
         var sum = 0;
@@ -34,24 +34,30 @@
         }
         document.write(sum2 + "<br>");
         document.write("<br><br>");
-        
+
 
 
         //3. 사용자가 입력한 값을 계속 더하고, 사용자가 0을 입력하면 그때까지 누적된 값을 출력하는 프로그램을 작성하시오
         document.write("문제3. 사용자가 입력한 값을 계속 더하고, 사용자가 0을 입력하면 그때까지 누적된 값을 출력하는 프로그램을 작성하시오 <br>");
-        // var result = 0;
-        // while (true) {
+        document.write(` <input type="button" value="실행" id="btn3" onclick="f_Q3();">`);
+        document.write(`<div id="btnResult3"></div>`);
+        var btn3 = document.querySelector("#btn3");
+        var btnResult3 = document.querySelector("#btnResult3");
 
-        //     var k1 = parseInt(prompt("정수값1 입력"));
+        function f_Q3() {
+            var result = 0;
+            while (true) {
+                var k1 = parseInt(prompt("정수값1 입력"));
 
-        //     if (k1 == 0) {
-        //         break;
-        //     }
+                if (k1 == 0) {
+                    break;
+                }
+                result += k1;
+            }
+            btnResult3.innerHTML = result;
+        }
 
-        //     result += k1;
-        // }
-        // document.write(result);
-        // document.write("<br><br>");
+        document.write("<br><br>");
 
 
         document.write("<br><br>");
@@ -59,7 +65,7 @@
         document.write("문제4. 다중 for문을 이용해서 1~10까지 중 i와 k의 더한 합이 3의 배수일 때만 출력(continue이용) <br>");
         var result4 = 0;
         for (let i = 1; i <= 10; i++) {
-            for (let k = 1; k <= i; k++) {
+            for (let k = 1; k <= 10; k++) {
 
                 if ((i + k) % 3 != 0) {
                     continue;
@@ -72,35 +78,37 @@
 
         //5. 1~100까지 중 2의 배수이면서 3의 배수인 것만 출력
         document.write("문제5. 1~100까지 중 2의 배수이면서 3의 배수인 것만 출력 <br>");
-        // for (let i = 1; i <= 100; i++) {
-        //     if (i % 2 == 0 && i % 3 == 0) {
-        //         document.write(i + "<br>");
-        //     }
-        // }
-        // document.write("<br><br>");
+        for (let i = 1; i <= 100; i++) {
+            if (i % 2 == 0 && i % 3 == 0) {
+                document.write(i + "<br>");
+            }
+        }
+        document.write("<br><br>");
 
-        // //6. 두 수를 입력(prompt) 두수의 합이 100이상일때만 출력 
-        // //(continue를 이용, 두 수 모두 0이 입력되면 종료)
-        // document.write("문제 6. 두 수를 입력(prompt) 두수의 합이 100이상일때만 출력 (continue를 이용, 두 수 모두 0이 입력되면 종료)")
+        // 6. 두 수를 입력(prompt) 두수의 합이 100이상일때만 출력 
+        // (continue를 이용, 두 수 모두 0이 입력되면 종료)
+        document.write("문제 6. 두 수를 입력(prompt) 두수의 합이 100이상일때만 출력 (continue를 이용, 두 수 모두 0이 입력되면 종료) <br>")
+        document.write(`<input type="button" value="실행" id="btn6" onclick="f_btn6();">`);
+        document.write(`<div id="btnResult6"></div>`);
+        var btn6 = document.querySelector("#btn6");
+        var btnResult6 = document.querySelector("#btnResult6");
 
+        function f_btn6() {
+            while (true) {
+                var a = parseInt(prompt("첫번째 정수 입력"));
+                var b = parseInt(prompt("두번째 정수 입력"));
+                if (a == 0 && b == 0) {
+                    break;
+                }
+                if (a + b < 100) {
+                    alert("다시");
+                    continue;
+                }
+                btnResult6.innerHTML = a + b;
+                break;
+            }
+        }
 
-        // while (true) {
-        //     var a = parseInt(prompt("첫번째 정수 입력"));
-        //     var b = parseInt(prompt("두번째 정수 입력"));
-
-        //     if (a == 0 || b == 0) {
-        //         break;
-        //     }
-
-        //     if (a + b < 100) {
-        //         alert("다시");
-        //         continue;
-        //     }
-
-        //     document.write(a + b);
-        //     break;
-
-        // }
 
     </script>
 
