@@ -9,9 +9,7 @@
 
     <link rel="stylesheet" type="text/css" href="resources/css/font.css">
     <link rel="stylesheet" type="text/css" href="resources/css/common.css">
-    <link rel="stylesheet" type="text/css" href="resources/css/layout.css">
-    <link rel="stylesheet" type="text/css" href="resources/css/cmpt.css">
-    <link rel="stylesheet" type="text/css" href="resources/css/contents.css">
+    <link rel="stylesheet" type="text/css" href="resources/css/content.css">
 
     <script>
         window.onload = function () {
@@ -19,7 +17,27 @@
             const hamburder = document.querySelector(".btn-lnb");
             const lnb = document.querySelector(".cont-wrap .lnb-wrap");
             const content = document.querySelector(".video-wrap");
-            const videoItem = document.querySelectorAll("li");
+
+            const videoItem = document.querySelectorAll(".video-list li");
+
+
+            //비디오 hover
+            function f_video() {
+                alert("dfg");
+
+                // for(var name in videoItem) {
+                //     alert(videoItem[name]);
+
+
+
+                // }
+
+                // setTimeout(function () {
+                //     videoItem.contains.add(".on");
+                // }, 10);
+            }
+
+
 
 
             //사이드메뉴
@@ -36,19 +54,11 @@
                 }
             }
 
-            //비디오 hover
-            function f_video() {
-
-                alert("sdf");
-                setTimeout(function () {
-                    videoItem.contains.add(".on");
-                }, 10);
-            }
-
-
             function init() {
                 hamburder.addEventListener("click", f_hamburder);
-                videoItem.addEventListener("click", f_video);
+                for (var i = 0; i < videoItem.length; i++) {
+                    videoItem[i].addEventListener('click', f_video, false);
+                }
 
             }
             init();
@@ -281,9 +291,6 @@
 
         </div>
         <!--  //cont-wrap -->
-
-
-
 
 
     </div>
