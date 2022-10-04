@@ -22,22 +22,22 @@
 
 
             //비디오 hover
-            function f_video() {
-                alert("dfg");
+            function f_video(event) {
 
-                // for(var name in videoItem) {
-                //     alert(videoItem[name]);
+                var target = event.target;
+                var item = target.parentElement.parentElement;
 
+                setTimeout(function () {
+                    item.classList.add('on');
+                }, 0);
 
-
-                // }
-
-                // setTimeout(function () {
-                //     videoItem.contains.add(".on");
-                // }, 10);
             }
-
-
+            //비디오 mouseout
+            function f_video_leave(event) {
+                var target = event.target;
+                var item = target.parentElement.parentElement;
+                item.classList.remove('on');
+            }
 
 
             //사이드메뉴
@@ -57,20 +57,11 @@
             function init() {
                 hamburder.addEventListener("click", f_hamburder);
                 for (var i = 0; i < videoItem.length; i++) {
-                    videoItem[i].addEventListener('click', f_video, false);
+                    videoItem[i].addEventListener('mouseover', f_video, false);
+                    videoItem[i].addEventListener('mouseout', f_video_leave, false);
                 }
-
             }
             init();
-
-
-
-
-
-
-
-
-
 
 
         };
