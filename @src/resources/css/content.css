@@ -46,8 +46,9 @@
 .video-list {padding: 61px; padding-top: 89px;}
 .video-list:after {content: ""; display: block; clear: both;}
 .video-list > li {width: calc((100% - 60px) / 5);margin-bottom: 30px;float: left;}
-.video-list > li a {display: block;}
+.video-list > li a {display: block; position: relative;}
 .video-list > li img {width: 100%;}
+.video-list > li .time {border-radius: 2px; background: rgba(0, 0, 0, 0.8); color: #fff; font-size: 12px; padding: 2px 6px; line-height: 1;font-style: normal;font-weight: 600; position: absolute; bottom: 94px;right: 5px;}
 .video-list > li.on {transform: scale(1.2);box-shadow: 5px 3px 4px #0003;background: #fff;position: relative;z-index: 9;  transition-delay: 2s;transition: all 0.3s ease;}
 .video-list > li:not(:nth-child(5n)) {margin-right: 15px;}
 .video-list .video-cont {padding: 15px 11px;}
