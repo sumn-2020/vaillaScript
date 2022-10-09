@@ -19,9 +19,12 @@
             const hamburder = document.querySelector(".btn-lnb");
             const lnb = document.querySelector(".cont-wrap .lnb-wrap");
             const content = document.querySelector(".video-wrap");
-            const videoItem = document.querySelector(".video-list li");
-            const video = document.querySelector(".video-container");
-            const time = document.querySelector(".time");
+
+            const videoItem = document.querySelectorAll(".video-list li");
+            const video = document.querySelectorAll(".video-container");
+            const time = document.querySelectorAll(".time");
+            var videoPlay;
+
 
 
             //사이드메뉴
@@ -39,24 +42,32 @@
             }
 
             //비디오
-            const miniVideo = {
-                video_hover(player) {
-                    time.innerText = "계속 마우스오버하여 재생하기";
-                    var player = setTimeout(() => {
-                        video.innerHTML = "<video src='./resources/video/video01.mp4' autoplay muted></video>"
-                    }, 1000);
-                },
-                video_leave(player) {
-                    alert("sdf");
-                    clearTimeout(player);
-                    time.innerText = "1:11:57";
-                    video.innerHTML = "<img src='resources/images/thumb.png' alt=''>"
-                }
+            function video_hover(e) {
+                console.log(e.target);
+                time.innerText = "계속 마우스오버하여 재생하기";
+                videoPlay = setTimeout(() => {
+                    video.innerHTML = "<video src='./resources/video/video01.mp4' autoplay muted></video>"
+                }, 1000);
             }
+
+            function video_leave() {
+                clearTimeout(videoPlay); // 비디오 refresh
+                time.innerText = "1:11:57";
+                video.innerHTML = "<img src='resources/images/thumb.png' alt=''>"
+            }
+
 
             function init() {
                 hamburder.addEventListener("click", f_hamburder);
-                videoItem.addEventListener("mouseover", miniVideo.video_hover());
+
+                for (let i = 0; i < videoItem.length; i++) {
+                    videoItem[i].addEventListener("mouseover", video_hover);
+                    videoItem[i].addEventListener("mouseout", video_leave);
+
+                }
+
+
+
             }
             init();
 
@@ -127,6 +138,150 @@
                     <li><a href="javascript:void(0);">새로운 맞춤 동영상</a></li>
                 </ul>
                 <ul class="video-list">
+                    <li>
+                        <a href="javascript:void(0);">
+                            <div class="video-container">
+                                <img src='resources/images/thumb.png' alt=''>
+                            </div>
+                            <div class="video-cont">
+                                <div class="profile-img"><img src="resources/images/thumb.png" alt=""></div>
+                                <div class="txt-wrap">
+                                    <strong class="tit">나를 피해 도망다니는 삼색이</strong>
+                                    <span class="user">haha ha</span>
+                                    <span class="info">조회수 19만회 21시간 전</span>
+                                </div>
+                            </div>
+                            <i class="time">11:57</i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">
+                            <div class="video-container">
+                                <img src='resources/images/thumb.png' alt=''>
+                            </div>
+                            <div class="video-cont">
+                                <div class="profile-img"><img src="resources/images/thumb.png" alt=""></div>
+                                <div class="txt-wrap">
+                                    <strong class="tit">나를 피해 도망다니는 삼색이</strong>
+                                    <span class="user">haha ha</span>
+                                    <span class="info">조회수 19만회 21시간 전</span>
+                                </div>
+                            </div>
+                            <i class="time">11:57</i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">
+                            <div class="video-container">
+                                <img src='resources/images/thumb.png' alt=''>
+                            </div>
+                            <div class="video-cont">
+                                <div class="profile-img"><img src="resources/images/thumb.png" alt=""></div>
+                                <div class="txt-wrap">
+                                    <strong class="tit">나를 피해 도망다니는 삼색이</strong>
+                                    <span class="user">haha ha</span>
+                                    <span class="info">조회수 19만회 21시간 전</span>
+                                </div>
+                            </div>
+                            <i class="time">11:57</i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">
+                            <div class="video-container">
+                                <img src='resources/images/thumb.png' alt=''>
+                            </div>
+                            <div class="video-cont">
+                                <div class="profile-img"><img src="resources/images/thumb.png" alt=""></div>
+                                <div class="txt-wrap">
+                                    <strong class="tit">나를 피해 도망다니는 삼색이</strong>
+                                    <span class="user">haha ha</span>
+                                    <span class="info">조회수 19만회 21시간 전</span>
+                                </div>
+                            </div>
+                            <i class="time">11:57</i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">
+                            <div class="video-container">
+                                <img src='resources/images/thumb.png' alt=''>
+                            </div>
+                            <div class="video-cont">
+                                <div class="profile-img"><img src="resources/images/thumb.png" alt=""></div>
+                                <div class="txt-wrap">
+                                    <strong class="tit">나를 피해 도망다니는 삼색이</strong>
+                                    <span class="user">haha ha</span>
+                                    <span class="info">조회수 19만회 21시간 전</span>
+                                </div>
+                            </div>
+                            <i class="time">11:57</i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">
+                            <div class="video-container">
+                                <img src='resources/images/thumb.png' alt=''>
+                            </div>
+                            <div class="video-cont">
+                                <div class="profile-img"><img src="resources/images/thumb.png" alt=""></div>
+                                <div class="txt-wrap">
+                                    <strong class="tit">나를 피해 도망다니는 삼색이</strong>
+                                    <span class="user">haha ha</span>
+                                    <span class="info">조회수 19만회 21시간 전</span>
+                                </div>
+                            </div>
+                            <i class="time">11:57</i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">
+                            <div class="video-container">
+                                <img src='resources/images/thumb.png' alt=''>
+                            </div>
+                            <div class="video-cont">
+                                <div class="profile-img"><img src="resources/images/thumb.png" alt=""></div>
+                                <div class="txt-wrap">
+                                    <strong class="tit">나를 피해 도망다니는 삼색이</strong>
+                                    <span class="user">haha ha</span>
+                                    <span class="info">조회수 19만회 21시간 전</span>
+                                </div>
+                            </div>
+                            <i class="time">11:57</i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">
+                            <div class="video-container">
+                                <img src='resources/images/thumb.png' alt=''>
+                            </div>
+                            <div class="video-cont">
+                                <div class="profile-img"><img src="resources/images/thumb.png" alt=""></div>
+                                <div class="txt-wrap">
+                                    <strong class="tit">나를 피해 도망다니는 삼색이</strong>
+                                    <span class="user">haha ha</span>
+                                    <span class="info">조회수 19만회 21시간 전</span>
+                                </div>
+                            </div>
+                            <i class="time">11:57</i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">
+                            <div class="video-container">
+                                <img src='resources/images/thumb.png' alt=''>
+                            </div>
+                            <div class="video-cont">
+                                <div class="profile-img"><img src="resources/images/thumb.png" alt=""></div>
+                                <div class="txt-wrap">
+                                    <strong class="tit">나를 피해 도망다니는 삼색이</strong>
+                                    <span class="user">haha ha</span>
+                                    <span class="info">조회수 19만회 21시간 전</span>
+                                </div>
+                            </div>
+                            <i class="time">11:57</i>
+                        </a>
+                    </li>
                     <li>
                         <a href="javascript:void(0);">
                             <div class="video-container">
