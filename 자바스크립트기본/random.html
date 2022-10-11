@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src=""></script>
+</head>
+
+<body>
+    <script>
+        console.log(Math.random()); //0~1사이 소수점 난수 발생
+
+        //1~10까지 숫자 발생 - ceil()이용
+        console.log(Math.ceil(Math.random() * 10)); //Math.ceil: 정수로 변환
+        //0~10까지 숫자 발생 - floor()이용
+        console.log(Math.floor(Math.random() * 11)); //0도 결과값에 출력될 수 있도록 
+        //4~9까지 숫자 발생
+        console.log(Math.floor(Math.random() * 6) + 4); //6개의 숫자가 랜덤으로 만들어 져야 하고 4부터 시작
+        // 65 ~ 100까지 숫자 발생 
+        console.log(Math.floor(Math.random() * 36) + 65);
+
+        // function f_random(p_start, p_end) {
+        //     return Math.floor(Math.random() * (p_end - p_start + 1)) + p_start; // (최대값 - 최소값  + 1 )
+        // }
+        console.log("65~100 ", f_random(65, 100)); //65~100 까지의 숫자 발생
+
+
+
+    </script>
+</body>
+
+</html>
