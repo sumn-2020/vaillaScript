@@ -21,8 +21,8 @@
             const content = document.querySelector(".video-wrap");
 
             const videoItem = document.querySelectorAll(".video-list li");
-            const video = document.querySelectorAll(".video-container");
-            const time = document.querySelectorAll(".time");
+            const video = document.querySelector(".video-container");
+            const time = document.querySelector(".time");
             var videoPlay;
 
 
@@ -43,7 +43,6 @@
 
             //비디오
             function video_hover(e) {
-                console.log(e.target);
                 time.innerText = "계속 마우스오버하여 재생하기";
                 videoPlay = setTimeout(() => {
                     video.innerHTML = "<video src='./resources/video/video01.mp4' autoplay muted></video>"
@@ -60,10 +59,16 @@
             function init() {
                 hamburder.addEventListener("click", f_hamburder);
 
+
+                // videoItem.addEventListener("mouseover", video_hover);
+                // videoItem.addEventListener("mouseout", video_leave);
+
+
+
+
                 for (let i = 0; i < videoItem.length; i++) {
                     videoItem[i].addEventListener("mouseover", video_hover);
                     videoItem[i].addEventListener("mouseout", video_leave);
-
                 }
 
 
@@ -170,7 +175,7 @@
                             <i class="time">11:57</i>
                         </a>
                     </li>
-                    <li>
+                    <!--<li>
                         <a href="javascript:void(0);">
                             <div class="video-container">
                                 <img src='resources/images/thumb.png' alt=''>
@@ -329,7 +334,7 @@
                             </div>
                             <i class="time">11:57</i>
                         </a>
-                    </li>
+                    </li> -->
 
                 </ul>
                 <!--  // video-list -->
