@@ -1,64 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-
 <body>
+  <div id="id_disp"></div>    
+<script>
+  var grades = {
+    "dd001" : "사장",
+    "dd002" : "전무",
+    "dd003" : "수석개발자",
+    "dd008" : "천재개발자",
+    "dd000" : "미확인"
+  }
+  /* grades[sawons[i].grade]  */
+  var sawons = [
+    {
+        name : "이선민",
+        grade : "dd001"
+    },
+    {
+        name : "임채리",
+        grade : "dd002"
+    },
+    {
+        name : "허근주",
+        grade : "dd003"
+    },
+    {
+        name : "양서연",
+        grade : "dd008"
+    },
+    {
+        name : "둘리",
+        grade : "dd000"
+    }
+  ]; 
 
-    <div id="id_disp"></div>
-
-    <script>
-
-        var grades = {
-            "dd001": "사장",
-            "dd002": "전무",
-            "dd003": "수석개발자",
-            "dd008": "천재개발자",
-            "dd000": "미확인",
-        }
-
-
-        //grades[sawons[i].grade]
-        var sawons = [
-            {
-                name: "이선민",
-                grade: "dd008"
-            },
-            {
-                name: "송중기",
-                grade: "dd001"
-            }
-        ];
-
-
-        //생성된 요소를 출력할 영역
-        var v_disp = document.querySelector("#id_disp");
-        //문자열 더하기를 이용해 요소생성하기 - table
-        var v_tbl = "<table border=1>";
-        v_tbl += "<tr><th> 순번</th><th> 이름</th><th> 직급</th></tr>";
-
-        console.log("사원정보가 있는 objectArray >> " + sawons.length);
-        console.log(sawons);
-
-        for (let i = 0; i < sawons.length; i++) {
-            //반복코드 start
-            v_tbl += "<tr>";
-            v_tbl += "<td>(순번)" + (i + 1) + "</td>";
-            v_tbl += "<td>" + sawons[i].name + "</td>";
-            v_tbl += "<td>" + grades[sawons[i].grade] + "</td>";
-            v_tbl += "</tr>";
-        }
-
-        v_tbl += "</table>";
-        v_disp.innerHTML = v_tbl;
-
-    </script>
-
+  // 생성된 요소를 출력할 영역
+  var v_disp = document.querySelector("#id_disp");
+  // 문자열 더하기를 이용해 요소생성하기 - table
+  var v_tbl = "<table border=1>";
+  v_tbl += "<tr><th>순번</th><th>이름</th><th>직급</th></tr>";
+  
+  console.log("사원정보가 있는 objectArray >>" + sawons.length);
+  console.log(sawons);
+  for(var i=0; i<sawons.length; i++){
+      /* 반복코드start */
+      v_tbl += "<tr>";
+      v_tbl += "<td>" + (i+1) +"</td>";
+      v_tbl += "<td>"+ sawons[i].name +"</td>";
+      v_tbl += "<td>"+grades[sawons[i].grade]+"</td>";
+      v_tbl += "</tr>";
+      /* 반복코드end */
+  }
+  v_tbl += "</table>";
+  v_disp.innerHTML = v_tbl;
+</script>
 </body>
-
 </html>

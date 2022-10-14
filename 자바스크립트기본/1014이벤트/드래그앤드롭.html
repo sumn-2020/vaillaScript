@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #drop {width: 400px; height: 200px; border: 2px solid red;}
+        img {width: 80px;}
+    </style>
+</head>
+<body>
+
+    <div id="drop">여기로 올려주세요</div>
+
+    <hr>
+    <img id="a" src="../img/Tulips1.jpg" draggable="true">
+
+    <script>
+        var v_img = document.querySelector("img");
+        var v_dropArea = document.querySelector('#drop');
+
+        v_img.addEventListener('dragstart', function() {
+            //dataTransfer객체에 'imgA'이름으로 타겟의 id정보 저장
+            event.dataTransfer.setData('imgId', event.target.id);
+        });
+
+        v_dropArea.addEventListener('dragover', function() {
+            //dragover: 대상위로 드래그되는 순간의 이벤트
+            //요소와 요소는 겹쳐질 수 없는 전제
+            // 기본기능을 중지시켜 대상위로 드래그되는 상태를 상실시킴으로써 드롭허용 
+            event.preventDefault(); //dragover기능막음 드롭 허용
+        });
+
+        v_dropArea.addEventListener('drop', function() {
+            var imgId = event.dataTransfer.getData('imgId');
+            event.target.appendChild(document.querySelector("#" + imgId));
+        });
+
+
+    </script>
+
+
+    
+</body>
+</html>

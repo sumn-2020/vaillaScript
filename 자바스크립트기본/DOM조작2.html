@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .child {border: 1px solid green; font-size: 2em;}
+        .ggongji {font-style: italic; color: brown;}
+    </style>
+
+</head>
+
+<body>
+
+    <div id="parent"> 엄마까투리
+
+        <!-- div.child*4 -->
+        <div class="child">마지</div>
+        <div class="child">두리</div>
+        <div class="child">세찌
+            <h1 id="sonja">손자</h1>
+        </div>
+        <div class="child">꽁지</div>
+
+    </div>
+
+    <script>
+        var parent = document.querySelector("#parent");
+        var sonja = document.querySelector("#sonja");
+        //cloneNode - 대상복사
+        //cloneNode() - 얕은 복사 - 잘 안씀
+        //cloneNode(true) - 깊은 복사 -  대상의 하위 요소 모두 복사
+        var copy1 = parent.cloneNode(); //대상을 복사, 얕은 복사 - 잘 안씀
+        var copy2 = parent.cloneNode(true); //대상을 복사, 깊은 복사
+        console.log("원본", parent);
+        console.log("사본", copy1);
+        console.log("사본", copy2);
+
+        parent.children[3].style.fontSize = "4em";
+        var child = parent.children;
+        //class는 속성이전에 예약어이기 때문에 
+        // setAttribute()를 이용해서 속성적용해야 한다.
+        child[3].class = "ggongji"; //적용되지 않음
+        child[3].setAttribute("class", "ggongji"); 
+
+        //삭제
+        parent.removeChild(child[1]);
+
+        //부모에서 자식 선택
+        var magi = parent.children[0]; //마지
+        // 자식에서 부모 선ㅌ액
+        magi.parentElement.style.border = "3px dashed gold";
+        sonja.parentElement.style.border = "5px solid red"
+
+        
+    </script>
+
+</body>
+
+</html>

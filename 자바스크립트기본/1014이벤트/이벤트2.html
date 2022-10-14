@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wrapper {
+            border-style: solid;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div id="wrapper" onmouseover="f_over(this)" onmouseout="f_out(this)">
+        <div>어디로가요</div>
+        <div style="visibility: hidden;">
+            <a href="https://www.ddit.or.kr/attendance/write">출석부</a>
+            <a href="https://www.naver.com/">네이버</a>
+            <a href="https://www.daum.net/">다음</a>
+        </div>
+    </div>
+
+    <script>
+        function f_over(p_this) {
+            //매개변수를 기점으로 대상요소를 찾아서 속성변경
+            //display none >> block
+            //p_this.children[1].style.display = "block";
+            p_this.children[1].style.visibility = "visible";
+        }
+
+        function f_out(p_this) {
+            //p_this.children[1].style.display = "none";
+            p_this.children[1].style.visibility = "hidden";
+        }
+    </script>
+</body>
+
+</html>
