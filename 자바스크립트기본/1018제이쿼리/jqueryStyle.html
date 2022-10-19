@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <script src="../js/jquery-3.6.1.min.js"></script>
+
+
+</head>
+
+<body>
+
+    <h4>jquery1</h4>
+    <h4>jquery2</h4>
+    <h4>jquery3</h4>
+    <h4>jquery4</h4>
+
+    <script>
+        //js 스타일 적용
+        window.onload = function () {
+            console.log("window")
+            var h4s = document.querySelectorAll("h4");
+            h4s[1].style.color = "red";
+            //일괄적용하고싶을 때
+            // for (let i = 0; i < h4s.length; i++) {
+            //     h4s[i].style.color = "gold";
+            // }
+        }
+
+        // //jquery스타일 적용 - 일괄 적용
+        $(document).ready(function() {
+            console.log("docu");
+            var h4s = $('h4');
+            h4s.css("color", "orange");
+
+            //요소하나만 선택하고 싶을 때
+            //요소하나만 선택하고 싶을 때 .eq(index)
+            //h4s.eq(2).css("color", "purple");
+
+        });
+    </script>
+</body>
+
+</html>

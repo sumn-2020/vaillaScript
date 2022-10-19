@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="jquery-3.6.1.min.js"></script>
+    <script>
+        $(function() {
+
+            //1. 화면이 로딩되면 body안에 이미지 추가 버튼 생성
+            var tagLoad = $('body').append($('<input type="button" id="btn" value="버튼" >'));
+            var tagImg = $('body').append($('<div id="img"></div>'));
+            var imgs =  $('.images');
+            var btn = $('#btn');
+
+            //2. 버튼 클릭시 ㅣ동적으로 이미지 추가 하기 - width, height 크기 지정
+            $(btn).on('click', function() {
+                var v_imgP = $('<img></img>', {
+                    'src' : 'Tulips1.jpg',
+                    'alt' : '이미지',
+                    'width' : '200px',
+                    'height' : '200px',
+                    'click' : function() {//3. 이미지 클릭시 이미지 테두리 넣기 - border: 2px solid red
+                        $(this).css('border', ' 2px solid red');
+                    }
+                });
+                //v_imgP.css('width', '50px').css('height', '50px');
+                v_imgP.appendTo(tagImg);
+                
+            });
+        });
+
+       
+   
+    </script>
+</head>
+<body>
+    
+    <!-- 1. 회면이 로딩되면 body안에 이미지 추가 버튼 생성 -->
+    <!-- 2. 버튼 클릭시 ㅣ동적으로 이미지 추가 하기 - width, height 크기 지정
+    3. 이미지 클릭시 이미지 테두리 넣기 - border: 2px solid red -->
+    
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #dropArea {
+            width: 400px;
+            height: auto;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ol id="id_flist">
+
+    </ol>
+
+
+    <div id="dropArea" ondragover="f_over()" ondrop="f_drop()">
+        여기로
+    </div>
+
+    <script>
+        var area = document.querySelector("#dropArea");
+        var v_flist = document.querySelector("#id_flist");
+
+
+        function f_over() {
+            event.preventDefault();
+        }
+        function f_drop() {
+            var v_files = event.dataTransfer.files; //파일여러개
+
+            //갯수 제한 -5개까지만 표현 / 5 이상일때 메시지 띄우기
+            if(v_files.length >= 6){
+                alert("5개만");
+                return;
+            }
+
+
+            area.innerHTML = ""; //영역초기화
+            v_flist.innerHTML = "" ;
+
+            for (let i = 0; i < v_files.length; i++) {
+                reader(v_files[i]);
+            }
+        }
+
+        function reader(p_file) {
+            //FileReader 객체 생성하기
+            var v_freader = new FileReader();
+
+            v_freader.onload = function () {
+                var v_img = document.createElement("img");
+                v_img.src = v_freader.result;
+                v_img.width = 200;
+                v_img.setAttribute("height", "200px");
+
+                //새요소 생성해서 대상append하기 
+                area.appendChild(v_img);
+
+                //file list 추가
+                var v_li = document.createElement("li");
+                v_li.innerHTML = p_file.name;
+                v_flist.appendChild(v_li);
+
+            }
+            //v_files를 대상으로 readAsDataURL  => result받기 
+            v_freader.readAsDataURL(p_file);
+            //v_freader.readAsDataURL(v_files[i]);
+        }
+
+        window.addEventListener("dragover", function () {
+            event.preventDefault();
+        });
+        window.addEventListener("drop", function () {
+            event.preventDefault();
+        })
+
+    </script>
+
+</body>
+
+</html>
